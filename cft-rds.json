@@ -20,7 +20,7 @@
       "Properties" : {
         "DBSubnetGroupDescription" : "Morpheus Demo",
         "DBSubnetGroupName" : "MorpheusDemo",
-        "SubnetIds" : ["subnet-026ba5773ac5f8a34"],
+        "SubnetIds" : ["subnet-026ba5773ac5f8a34", "subnet-0ced978d11cc47ed1"],
       }
     }
   },
