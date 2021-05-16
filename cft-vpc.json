@@ -7,7 +7,7 @@
       "Properties" : {
         "EnableDnsSupport" : "true",
         "EnableDnsHostnames" : "true",
-        "CidrBlock" : "10.0.1.0/24",
+        "CidrBlock" : "10.0.7.0/24",
         "Tags" : [
           { "Key" : "Application", "Value" : { "Ref" : "AWS::StackName" } },
           { "Key" : "Network", "Value" : "Public" }
