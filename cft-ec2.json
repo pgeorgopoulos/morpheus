@@ -7,7 +7,7 @@
       "Properties" : {
         "InstanceType" : "t3.micro",
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
-        "KeyName" : "morpheus-ssh-key-sandbox",
+        "KeyName" : "<%=customOptions.KeyName%>",
         "ImageId" : "ami-05d72852800cbf29e"
       }
     },
