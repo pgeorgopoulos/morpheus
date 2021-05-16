@@ -6,7 +6,7 @@
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
         "InstanceType" : "t3.micro",
-        "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+        "SecurityGroupIds" : [ { "Ref" : "InstanceSecurityGroup" } ],
         "KeyName" : "<%=customOptions.KeyName%>",
         "ImageId" : "ami-05d72852800cbf29e",
         "SubnetId" : "subnet-026ba5773ac5f8a34"
