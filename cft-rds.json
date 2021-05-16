@@ -6,6 +6,7 @@
       "Type" : "AWS::RDS::DBInstance",
       "Properties" : {
         "DBName" : "MyDatabase",
+        "DBSubnetGroupName" : { "Ref" : "DBSubnetGroup" },
         "AllocatedStorage" : "5",
         "DBInstanceClass" : "db.t2.small",
         "Engine" : "MySQL",
@@ -13,6 +14,14 @@
         "MasterUserPassword" : "myPassword"
       },
       "DeletionPolicy" : "Snapshot"
+    },
+    "DBSubnetGroup" : {
+      "Type" : "AWS::RDS::DBSubnetGroup",
+      "Properties" : {
+        "DBSubnetGroupDescription" : "Morpheus Demo",
+        "DBSubnetGroupName" : "MorpheusDemo",
+        "SubnetIds" : ["subnet-026ba5773ac5f8a34"],
+      }
     }
   },
 
