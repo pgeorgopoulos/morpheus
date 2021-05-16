@@ -1,0 +1,29 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+  "Description" : "AWS CloudFormation RDS",
+  "Resources" : {
+    "MyDB" : {
+      "Type" : "AWS::RDS::DBInstance",
+      "Properties" : {
+        "DBName" : "MyDatabase",
+        "AllocatedStorage" : "5",
+        "DBInstanceClass" : "db.t2.small",
+        "Engine" : "MySQL",
+        "MasterUsername" : "myName",
+        "MasterUserPassword" : "myPassword"
+      },
+      "DeletionPolicy" : "Snapshot"
+    }
+  },
+
+  "Outputs" : {
+    "JDBCConnectionString": {
+      "Description" : "JDBC connection string for the database",
+      "Value" : { "Fn::Join": [ "", [ "jdbc:mysql://",
+                                      { "Fn::GetAtt": [ "MyDB", "Endpoint.Address" ] },
+                                      ":",
+                                      { "Fn::GetAtt": [ "MyDB", "Endpoint.Port" ] },
+                                      "/MyDatabase"]]}
+    }
+  }
+}
